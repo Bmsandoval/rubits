@@ -62,12 +62,7 @@ rails server
 ### Test the server
 ```bash
 curl localhost:3000/say \
-    -H 'Content-Type: application/json' \
-    -d '{"message": "Hello from RapidAPI"}'
-```
-```bash
-curl localhost:3000/say \
-    -H 'Content-Type: application/json' \
-    -d '{"message": "Hello from RapidAPI"}' \
-    | ruby -r json -e "print JSON.parse(STDIN.read)['message']"
+	-H 'Content-Type: application/json' \
+	-d '{"message": "Hello from RapidAPI", "cow": "stegosaurus", "balloon_type": "think"}' \
+	| ruby -r json -e "print JSON.parse(STDIN.read)['message']"
 ```
