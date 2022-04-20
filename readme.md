@@ -1,35 +1,49 @@
-install recent ruby
-
+### Following instructions expect homebrew
 ```bash
-brew install ruby@3.0
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-add to bashrc
+### Install recent ruby environment manager
+```bash
+brew install rbenv ruby-build
+```
 
+### Add to bashrc
 ```bash
 cat << EOL > ~/.bashrc
-	# If you need to have ruby@3.0 first in your PATH:
-	export PATH="/usr/local/opt/ruby@3.0/bin:$PATH"
-
-	# For compilers to find ruby@3.0 you may need to set:
-	export LDFLAGS="-L/usr/local/opt/ruby@3.0/lib"
-	export CPPFLAGS="-I/usr/local/opt/ruby@3.0/include"
-
-	# For pkg-config to find ruby@3.0 you may need to set:
-	export PKG_CONFIG_PATH="/usr/local/opt/ruby@3.0/lib/pkgconfig"
+    # load rbenv every time you open a terminal
+    echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> 
 EOL
 ```
 
-update gem
+### Update profiles
+```bash
+source ~/.bashrc
+```
 
+### Install Ruby via rbenv
+```bash
+rbenv install 3.1.1
+```
+
+### Set global ruby version
+```bash
+rbenv global 3.1.1
+```
+
+### Update gem
 ```bash
 gem install rubygems-update
 update_rubygems
 gem update --system
 ```
 
-install rails
-
+### Install rails
 ```bash
-gem install rails
+sudo gem install rails
+```
+
+### Make rbenv detect new packages
+```bash
+rbenv rehash
 ```
