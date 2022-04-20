@@ -47,3 +47,27 @@ sudo gem install rails
 ```bash
 rbenv rehash
 ```
+
+### Install Dependencies
+```bash
+bundle install
+```
+
+### Run the server
+```bash
+rails server
+```
+
+
+### Test the server
+```bash
+curl localhost:3000/say
+  -H 'Content-Type: application/json'
+  -d '{"message": "Hello from RapidAPI"}'
+```
+```bash
+curl localhost:3000/say
+  -H 'Content-Type: application/json'
+  -d '{"message": "Hello from RapidAPI"}'
+| ruby -r json -e "print JSON.parse(STDIN.read)['message']"
+```
