@@ -58,6 +58,12 @@ git checkout develop
 bundle install
 ```
 
+
+### Try running the unit test suite
+```bash
+rails test
+```
+
 ### Run the server
 ```bash
 rails server
