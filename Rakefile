@@ -4,3 +4,8 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+task :default => :test
+task :test do
+  Dir.glob('./test/*_test.rb').each { |file| require file}
+end
