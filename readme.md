@@ -48,6 +48,11 @@ sudo gem install rails
 rbenv rehash
 ```
 
+### Ensure you are on the 'develop' branch
+```bash
+git checkout develop
+```
+
 ### Install Dependencies
 ```bash
 bundle install
